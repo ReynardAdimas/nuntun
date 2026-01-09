@@ -12,10 +12,10 @@ export default function Quiz() {
   const [userTags, setUserTags] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
-  // Load Pertanyaan dari API Backend
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/questions')
+    axios.get(`${API_URL}/api/questions`)
       .then(res => {
         setQuestions(res.data);
         setLoading(false);
@@ -27,16 +27,12 @@ export default function Quiz() {
   }, []);
 
   const handleAnswer = (tagsString) => {
-    // Gabungkan tags baru dengan tags yang sudah ada
     const newTags = tagsString.split(" ");
     const updatedTags = [...userTags, ...newTags];
     setUserTags(updatedTags);
-
-    // Cek apakah masih ada pertanyaan selanjutnya
     if (currentIdx < questions.length - 1) {
       setCurrentIdx(currentIdx + 1);
     } else {
-      // Jika habis, kirim ke halaman Result
       navigate('/result', { state: { tags: updatedTags } });
     }
   };
@@ -48,7 +44,6 @@ export default function Quiz() {
 
   return (
     <div className="w-full max-w-xl space-y-6">
-      {/* Indikator Progress */}
       <div className="space-y-2">
         <div className="flex justify-between text-sm text-slate-400">
           <span>Pertanyaan {currentIdx + 1} dari {questions.length}</span>
@@ -56,8 +51,6 @@ export default function Quiz() {
         </div>
         <Progress value={progressValue} className="h-2" />
       </div>
-
-      {/* Kartu Pertanyaan dengan Animasi */}
       <motion.div
         key={currentIdx}
         initial={{ opacity: 0, x: 20 }}

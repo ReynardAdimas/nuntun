@@ -11,6 +11,7 @@ export default function Result() {
   const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
   useEffect(() => {
     if (!state?.tags) {
@@ -20,7 +21,7 @@ export default function Result() {
 
     const fetchRecommendation = async () => {
       try {
-        const res = await axios.post('http://127.0.0.1:8000/api/recommend', {
+        const res = await axios.post(`${API_URL}/api/recommend`, {
           tags: state.tags
         });
         setRecommendations(res.data);

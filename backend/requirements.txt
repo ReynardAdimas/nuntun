@@ -1,49 +1,8 @@
-annotated-doc==0.0.4
-annotated-types==0.7.0
-anyio==4.12.0
-certifi==2025.11.12
-charset-normalizer==3.4.4
-click==8.3.1
-colorama==0.4.6
-et_xmlfile==2.0.0
-exceptiongroup==1.3.1
-fastapi==0.128.0
-filelock @ file:///C:/miniconda3/conda-bld/filelock_1762420019633/work
-fsspec==2025.12.0
-gmpy2 @ file:///C:/miniconda3/conda-bld/gmpy2_1764748105976/work
-h11==0.16.0
-huggingface-hub==0.36.0
-idna==3.11
-Jinja2 @ file:///C:/b/abs_920kup4e6u/croot/jinja2_1741711580669/work
-joblib==1.5.3
-MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
-mpmath @ file:///C:/b/abs_7833jrbiox/croot/mpmath_1690848321154/work
-networkx @ file:///C:/b/abs_b054htfn9t/croot/networkx_1737043671910/work
-numpy==2.2.6
-openpyxl==3.1.5
-packaging==25.0
-pandas==2.3.3
-pydantic==2.12.5
-pydantic_core==2.41.5
-python-dateutil==2.9.0.post0
-pytz==2025.2
-PyYAML @ file:///C:/miniconda3/conda-bld/pyyaml_1763465513320/work
-regex==2025.11.3
-requests==2.32.5
-safetensors==0.7.0
-scikit-learn==1.7.2
-scipy==1.15.3
-sentence-transformers==5.2.0
-six==1.17.0
-starlette==0.50.0
-sympy==1.13.1
-threadpoolctl==3.6.0
-tokenizers==0.22.1
-torch==2.5.1
-tqdm==4.67.1
-transformers==4.57.3
-typing-inspection==0.4.2
-typing_extensions @ file:///C:/b/abs_ecq8gc0vbm/croot/typing_extensions_1756281142218/work
-tzdata==2025.3
-urllib3==2.6.2
-uvicorn==0.40.0
+fastapi
+uvicorn
+pydantic
+sentence-transformers
+torch --index-url https://download.pytorch.org/whl/cpu
+scikit-learn
+pandas
+numpy
